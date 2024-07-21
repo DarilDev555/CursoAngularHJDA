@@ -1,0 +1,11 @@
+<ng-container *ngIf="productoMostar">
+    <h2>Id: {{ productoMostar.id }}</h2>
+    <h2>titulo: {{ productoMostar.title }}</h2>
+    <h2>Precio: {{ productoMostar.price }}</h2>
+    <img *ngIf="productoMostar.images.length > 1" [ngSrc]="productoMostar.images[0]" alt="{{ productoMostar.title }}" width="640" height="480">
+    <img *ngIf="productoMostar.images.length == 1" [ngSrc]="productoMostar.images[0].slice(2,-2)" alt="{{ productoMostar.title }}" width="640" height="480">    
+    <p>URL IMAGEN:{{productoMostar.images[0]}}</p>
+</ng-container>
+  <ng-container *ngIf="!productoMostar">
+    Producto no encontrado
+</ng-container>
